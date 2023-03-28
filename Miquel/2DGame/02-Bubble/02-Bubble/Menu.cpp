@@ -20,7 +20,7 @@ Menu::Menu() {
 }
 
 Menu::~Menu() {
-	if (sprite != NULL) delete sprite;
+	//if (sprite != NULL) delete sprite;
 	
 }
 
@@ -37,7 +37,12 @@ void Menu::init() {
 
 void Menu::update(int deltaTime) {
 	currentTime += deltaTime;
-	//sprite[0]->update(deltaTime);
+	if (state == 0) {
+		background->update(deltaTime);
+	} 
+	if (state == 1) creditsBackground->update(deltaTime);
+	
+	
 }
 
 void Menu::setPosIndex(int newPos) {
@@ -53,9 +58,10 @@ void Menu::render() {
 	texProgram.setUniformMatrix4f("modelview", modelview);
 	texProgram.setUniform2f("texCoordDispl", 0.f, 0.f);
 	
-	if(state == 0 || state == 1)sprite[state]->render();
+	//if(state == 0 || state == 1)sprite[state]->render();
 
 	if (state == 0) {
+		background->render();
 		//title
 		modelview = glm::translate(glm::mat4(1.0f), glm::vec3(100.f, 8.f, 0.f));
 		texProgram.setUniformMatrix4f("modelview", modelview);
@@ -81,11 +87,13 @@ void Menu::render() {
 		texProgram.setUniformMatrix4f("modelview", modelview);
 		texQuad[4]->render(texs[4]);
 	}
+	else if (state == 1) creditsBackground->render();
 	else if(state== 2 ){
 		
 		modelview = glm::translate(glm::mat4(1.0f), glm::vec3(0.f, 0.f, 0.f));
 		texProgram.setUniformMatrix4f("modelview", modelview);
 		instruction->render(instrTex[instructionN]);
+		
 		
 
 	}
@@ -124,19 +132,20 @@ void Menu::initBackground() {
 
 	//background
 	spritesheet[0].loadFromFile("images/background.png", TEXTURE_PIXEL_FORMAT_RGBA);
-	sprite[0] = Sprite::createSprite(glm::ivec2(640, 480), glm::vec2(float(1.f / 14.f), 0.25), &spritesheet[0], &texProgram);
-	sprite[0]->setNumberAnimations(1);
+	background = Sprite::createSprite(glm::ivec2(640, 480), glm::vec2(float(1.f / 14.f), 0.25), &spritesheet[0], &texProgram);
+	background->setNumberAnimations(1);
 
-	sprite[0]->setAnimationSpeed(0, 6);
+	/*background->setAnimationSpeed(0, 6);
 
 	for (int i = 0; i < 14; ++i) {
 		for (int j = 0; j < 4; ++j) {
-			sprite[0]->addKeyframe(0, glm::vec2(i * float(1.f / 14.f), j * 0.25));
+			background->addKeyframe(0, glm::vec2(i * float(1.f / 14.f), j * 0.25));
 		}
 	}
 
-	sprite[0]->changeAnimation(0);
-	sprite[0]->setPosition(glm::vec2(float(0), float(0)));
+	background->changeAnimation(0);*/
+	
+	background->setPosition(glm::vec2(float(0), float(0)));
 
 
 
@@ -176,25 +185,26 @@ void Menu::initBackground() {
 
 	//credits-background
 	spritesheet[1].loadFromFile("images/credits-background.png", TEXTURE_PIXEL_FORMAT_RGBA);
-	sprite[1] = Sprite::createSprite(glm::ivec2(640, 480), glm::vec2(float(1.f / 5.f), 0.25), &spritesheet[1], &texProgram);
-	sprite[1]->setNumberAnimations(1);
+	creditsBackground = Sprite::createSprite(glm::ivec2(640, 480), glm::vec2(float(1.f / 5.f), 0.25), &spritesheet[1], &texProgram);
+	creditsBackground->setNumberAnimations(1);
 
-	sprite[1]->setAnimationSpeed(0, 6);
+	creditsBackground->setAnimationSpeed(0, 6);
 
 	for (int i = 0; i < 5; ++i) {
 		for (int j = 0; j < 4; ++j) {
-			sprite[1]->addKeyframe(0, glm::vec2(i * float(1.f / 5.f), j * 0.25));
+			creditsBackground->addKeyframe(0, glm::vec2(i * float(1.f / 5.f), j * 0.25));
 		}
 	}
 
-	sprite[1]->changeAnimation(0);
-	sprite[1]->setPosition(glm::vec2(float(0), float(0)));
+	creditsBackground->changeAnimation(0);
+	creditsBackground->setPosition(glm::vec2(float(0), float(0)));
 
 	//instructions-background
 	geom[0] = glm::vec2(0.f, 0.f); geom[1] = glm::vec2(640, 480);
 	instruction = TexturedQuad::createTexturedQuad(geom, texCoords, texProgram);
 	instrTex[0].loadFromFile("images/instructions-background-0.png", TEXTURE_PIXEL_FORMAT_RGBA);
 	instrTex[1].loadFromFile("images/instructions-background-1.png", TEXTURE_PIXEL_FORMAT_RGBA);
+	instrTex[2].loadFromFile("images/instructions-background-2.png", TEXTURE_PIXEL_FORMAT_RGBA);
 
 
 
@@ -205,14 +215,15 @@ void Menu::changeState(int newState) {
 	if (state == 2) instructionN = 0;
 }
 
-void Menu::changeInstruction(int act) {
-	/*if (act) {
-		instructionN=1;
+void Menu::changeInstruction(bool act) {
+	if (act && instructionN < 2) {
+		
+		++instructionN;
 	}
-	else {
-		instructionN=0;
-	}*/
-	instructionN = act;
+	else if(!act && instructionN > 0) {
+		--instructionN;
+	}
+	
 }
 
 

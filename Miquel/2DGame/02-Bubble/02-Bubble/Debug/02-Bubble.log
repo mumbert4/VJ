@@ -1,6 +1,28 @@
 ﻿  Game.cpp
+\\wsl.localhost\Ubuntu\home\miquel\UNI\VJ\Miquel\2DGame\02-Bubble\02-Bubble\Game.h(9,1): warning C4005: 'SCREEN_WIDTH': redefinición de macro
+\\wsl.localhost\Ubuntu\home\miquel\UNI\VJ\Miquel\2DGame\02-Bubble\02-Bubble\SoundManager.h(10,1): message : vea la definición anterior de 'SCREEN_WIDTH'
+  main.cpp
+\\wsl.localhost\Ubuntu\home\miquel\UNI\VJ\Miquel\2DGame\02-Bubble\02-Bubble\Game.h(9,1): warning C4005: 'SCREEN_WIDTH': redefinición de macro
+\\wsl.localhost\Ubuntu\home\miquel\UNI\VJ\Miquel\2DGame\02-Bubble\02-Bubble\SoundManager.h(10,1): message : vea la definición anterior de 'SCREEN_WIDTH'
+  Menu.cpp
+\\wsl.localhost\Ubuntu\home\miquel\UNI\VJ\Miquel\2DGame\02-Bubble\02-Bubble\Game.h(9,1): warning C4005: 'SCREEN_WIDTH': redefinición de macro
+\\wsl.localhost\Ubuntu\home\miquel\UNI\VJ\Miquel\2DGame\02-Bubble\02-Bubble\SoundManager.h(10,1): message : vea la definición anterior de 'SCREEN_WIDTH'
+  Player.cpp
+\\wsl.localhost\Ubuntu\home\miquel\UNI\VJ\Miquel\2DGame\02-Bubble\02-Bubble\Game.h(9,1): warning C4005: 'SCREEN_WIDTH': redefinición de macro
+\\wsl.localhost\Ubuntu\home\miquel\UNI\VJ\Miquel\2DGame\02-Bubble\02-Bubble\SoundManager.h(10,1): message : vea la definición anterior de 'SCREEN_WIDTH'
+  Scene.cpp
+\\wsl.localhost\Ubuntu\home\miquel\UNI\VJ\Miquel\2DGame\02-Bubble\02-Bubble\Game.h(9,1): warning C4005: 'SCREEN_WIDTH': redefinición de macro
+\\wsl.localhost\Ubuntu\home\miquel\UNI\VJ\Miquel\2DGame\02-Bubble\02-Bubble\SoundManager.h(10,1): message : vea la definición anterior de 'SCREEN_WIDTH'
+  Shader.cpp
+  ShaderProgram.cpp
+  SoundManager.cpp
+  Sprite.cpp
+  Texture.cpp
+  TexturedQuad.cpp
+  TileMap.cpp
+  Generando código...
 SOIL.lib(image_DXT.obj) : warning LNK4099: no se encontró PDB '' con 'SOIL.lib(image_DXT.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
 SOIL.lib(image_helper.obj) : warning LNK4099: no se encontró PDB '' con 'SOIL.lib(image_helper.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
 SOIL.lib(SOIL.obj) : warning LNK4099: no se encontró PDB '' con 'SOIL.lib(SOIL.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
 SOIL.lib(stb_image_aug.obj) : warning LNK4099: no se encontró PDB '' con 'SOIL.lib(stb_image_aug.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-  02-Bubble.vcxproj -> E:\Documents\VJ\Codi\Modificat\2DGame\02-Bubble\Debug\02-Bubble.exe
+  02-Bubble.vcxproj -> \\wsl.localhost\Ubuntu\home\miquel\UNI\VJ\Miquel\2DGame\02-Bubble\Debug\02-Bubble.exe

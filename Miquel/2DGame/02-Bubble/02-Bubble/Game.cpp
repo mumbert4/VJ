@@ -7,10 +7,15 @@ void Game::init()
 {
 	bPlay = true;
 	glClearColor(.0f, .0f, .0f, 1.0f);
-	/*SoundManager::instance().init();
-	engine = SoundManager::instance().getSoundEngine();
-	irrklang::ISound* sound = engine->play2D("sounds/menu-sound.mp3", true, false, true);*/
-	//sound->setVolume(0.5f);
+	engine = createIrrKlangDevice();
+	if (!engine) bPlay = false;
+	else {
+		irrklang::ISound* sound = engine->play2D("02-Bubble/sounds/menu-sound.mp3", true, false, true);
+		//sound->setVolume(0.5f);
+		
+	}
+	
+	
 	//scene.init();
 	pos = 0;
 	state = 0;
@@ -47,7 +52,7 @@ void Game::keyPressed(int key)
 
 	if (key == 13) {//tecla enter-> per seleccionar la pantalla que volem
 		if (pos == 0) {
-			Scene.init()
+			scene.init();
 		}
 		else {
 
@@ -82,11 +87,12 @@ void Game::specialKeyPressed(int key)
 		}
 	}
 	else if (key == GLUT_KEY_LEFT && state==2){
-		menu.changeInstruction(0);
+		menu.changeInstruction(false);
+		
 		
 	}
-	else if (key == GLUT_KEY_LEFT && state==2) {
-		menu.changeInstruction(1);
+	else if (key == GLUT_KEY_RIGHT && state==2) {
+		menu.changeInstruction(true);
 		
 	}
 

@@ -1,6 +1,23 @@
 ﻿  Enemy.cpp
-SOIL.lib(image_DXT.obj) : warning LNK4099: PDB '' was not found with 'SOIL.lib(image_DXT.obj)' or at ''; linking object as if no debug info
-SOIL.lib(image_helper.obj) : warning LNK4099: PDB '' was not found with 'SOIL.lib(image_helper.obj)' or at ''; linking object as if no debug info
-SOIL.lib(SOIL.obj) : warning LNK4099: PDB '' was not found with 'SOIL.lib(SOIL.obj)' or at ''; linking object as if no debug info
-SOIL.lib(stb_image_aug.obj) : warning LNK4099: PDB '' was not found with 'SOIL.lib(stb_image_aug.obj)' or at ''; linking object as if no debug info
-  Night Knight.vcxproj -> C:\Users\alber\OneDrive\Documents\Albert\UPC\VJ\Night Knight 2D\2DGame\Night Knight\Debug\Night Knight.exe
+\\wsl.localhost\Ubuntu\home\miquel\UNI\VJ\Albert\2DGame\Night Knight\Night Knight\Enemy.cpp(3,10): fatal  error C1083: No se puede abrir el archivo incluir: 'GL/glew.h': No such file or directory
+  Game.cpp
+\\wsl.localhost\Ubuntu\home\miquel\UNI\VJ\Albert\2DGame\Night Knight\Night Knight\Game.cpp(1,10): fatal  error C1083: No se puede abrir el archivo incluir: 'GL/glew.h': No such file or directory
+  main.cpp
+\\wsl.localhost\Ubuntu\home\miquel\UNI\VJ\Albert\2DGame\Night Knight\Night Knight\main.cpp(1,10): fatal  error C1083: No se puede abrir el archivo incluir: 'GL/glew.h': No such file or directory
+  Object.cpp
+\\wsl.localhost\Ubuntu\home\miquel\UNI\VJ\Albert\2DGame\Night Knight\Night Knight\Object.cpp(3,10): fatal  error C1083: No se puede abrir el archivo incluir: 'GL/glew.h': No such file or directory
+  Player.cpp
+\\wsl.localhost\Ubuntu\home\miquel\UNI\VJ\Albert\2DGame\Night Knight\Night Knight\Player.cpp(3,10): fatal  error C1083: No se puede abrir el archivo incluir: 'GL/glew.h': No such file or directory
+  Scene.cpp
+\\wsl.localhost\Ubuntu\home\miquel\UNI\VJ\Albert\2DGame\Night Knight\Night Knight\Scene.cpp(3,10): fatal  error C1083: No se puede abrir el archivo incluir: 'glm/gtc/matrix_transform.hpp': No such file or directory
+  Shader.cpp
+\\wsl.localhost\Ubuntu\home\miquel\UNI\VJ\Albert\2DGame\Night Knight\Night Knight\Shader.h(6,10): fatal  error C1083: No se puede abrir el archivo incluir: 'GL/glew.h': No such file or directory
+  ShaderProgram.cpp
+\\wsl.localhost\Ubuntu\home\miquel\UNI\VJ\Albert\2DGame\Night Knight\Night Knight\ShaderProgram.cpp(1,10): fatal  error C1083: No se puede abrir el archivo incluir: 'glm/gtc/type_ptr.hpp': No such file or directory
+  Sprite.cpp
+\\wsl.localhost\Ubuntu\home\miquel\UNI\VJ\Albert\2DGame\Night Knight\Night Knight\Sprite.cpp(1,10): fatal  error C1083: No se puede abrir el archivo incluir: 'GL/glew.h': No such file or directory
+  Texture.cpp
+\\wsl.localhost\Ubuntu\home\miquel\UNI\VJ\Albert\2DGame\Night Knight\Night Knight\Texture.cpp(1,10): fatal  error C1083: No se puede abrir el archivo incluir: 'SOIL.h': No such file or directory
+  TileMap.cpp
+\\wsl.localhost\Ubuntu\home\miquel\UNI\VJ\Albert\2DGame\Night Knight\Night Knight\TileMap.h(5,10): fatal  error C1083: No se puede abrir el archivo incluir: 'glm/glm.hpp': No such file or directory
+  Generando código...

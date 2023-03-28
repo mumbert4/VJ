@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>E:\Documents\VJ\Codi\Modificat\2DGame\02-Bubble\Debug\02-Bubble.exe</FullPath>
+      <FullPath>\\wsl.localhost\Ubuntu\home\miquel\UNI\VJ\Miquel\2DGame\02-Bubble\Debug\02-Bubble.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

@@ -19,19 +19,20 @@ public:
 	void initShaders();
 	void initBackground();
 	void changeState(int newState);
-	void changeInstruction(int act);
+	void changeInstruction(bool act);
 
 private:
 	int pos,state,instructionN;
 	glm::vec2 positions[3];
-	Sprite* sprite[2];
+	Sprite* background; 
+	Sprite* creditsBackground;
 	float currentTime;
 	Texture spritesheet[2];
 	TexturedQuad*  texQuad[5];//0-> title, 1-> credits, 2-> instructions, 3-> start, 4-> sword
 	glm::mat4 projection;
 	Texture texs[5];//0-> title, 1-> credits, 2-> instructions, 3-> start, 4-> sword
 	TexturedQuad* instruction;
-	Texture instrTex[2];
+	Texture instrTex[3];
 	ShaderProgram texProgram;
 };
 
