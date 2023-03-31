@@ -1,0 +1,7 @@
+﻿  Circle.cpp
+C:\Users\alber\OneDrive\Documents\Albert\UPC\VJ\OpenGL_VS2015\OpenGL\02-primitives\02-primitives\Circle.cpp(20,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\alber\OneDrive\Documents\Albert\UPC\VJ\OpenGL_VS2015\OpenGL\02-primitives\02-primitives\Circle.cpp(27,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\alber\OneDrive\Documents\Albert\UPC\VJ\OpenGL_VS2015\OpenGL\02-primitives\02-primitives\Circle.cpp(28,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\alber\OneDrive\Documents\Albert\UPC\VJ\OpenGL_VS2015\OpenGL\02-primitives\02-primitives\Circle.cpp(30,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\alber\OneDrive\Documents\Albert\UPC\VJ\OpenGL_VS2015\OpenGL\02-primitives\02-primitives\Circle.cpp(31,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  02-primitives.vcxproj -> C:\Users\alber\OneDrive\Documents\Albert\UPC\VJ\OpenGL_VS2015\OpenGL\02-primitives\Debug\02-primitives.exe
