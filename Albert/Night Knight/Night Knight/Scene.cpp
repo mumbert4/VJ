@@ -105,22 +105,22 @@ void Scene::comprovar_victoria_derrota() {
 
 bool Scene::comprovar_mort(Player* jugador, Enemy* enemics) {
 
-	glm::vec2 pos = player->getPosition();
+	if (player->getMorint()) return true;
 
-	for (int i = 0; i < 10; i++) {
-		if (enemies[i] != NULL) {
-			glm::vec2 posE = enemies[i]->getPosition();
+	else {
+		glm::vec2 pos = player->getPosition();
 
-			if (pos.x == posE.x && pos.y == posE.y) return true;
+		for (int i = 0; i < 10; i++) {
+			if (enemies[i] != NULL) {
+				glm::vec2 posE = enemies[i]->getPosition();
 
-			 cout << pos.x << posE.x << "      " << pos.y << posE.y << endl;
+				if (pos.x == posE.x && pos.y == posE.y) return true;
 
+			}
 		}
-
 
 	}
 	return false;
-
 }
 
 
@@ -143,6 +143,7 @@ void Scene::update(int deltaTime)
 	if (player->getMorint()) {
 		player->setPosition(glm::vec2(INIT_PLAYER_X_TILES * map->getTileSize(), INIT_PLAYER_Y_TILES * map->getTileSize()));
 		player->setVides(player->getVides() - 1);
+		player->setMorint(false);
 	}
 
 	comprovar_victoria_derrota();
@@ -164,14 +165,15 @@ void Scene::render()
 	player->render();
 
 	float enemy_pos = (sin(currentTime / 500.f) / 10);
-	enemies[0]->setPosition(glm::vec2((25 * map->getTileSize() + 400 * enemy_pos), 12 * map->getTileSize()));
-	enemies[0]->setOrientation(cos(currentTime / 500.f) / 10);
+	float enemy_pos_aux = -(sin(currentTime / 500.f) / 10);
+	enemies[0]->setPosition(glm::vec2((25 * map->getTileSize() + 400 * enemy_pos_aux), 12 * map->getTileSize()));
+	enemies[0]->setOrientation(-cos(currentTime / 500.f) / 10);
 	enemies[0]->render();
 	enemies[1]->setPosition(glm::vec2((10 * map->getTileSize() + 400 * enemy_pos), 12 * map->getTileSize()));
 	enemies[1]->setOrientation(cos(currentTime / 500.f) / 10);
 	enemies[1]->render();
-	enemies[2]->setPosition(glm::vec2((27 * map->getTileSize() + 400 * enemy_pos), 24 * map->getTileSize()));
-	enemies[2]->setOrientation(cos(currentTime / 500.f) / 10);
+	enemies[2]->setPosition(glm::vec2((27 * map->getTileSize() + 400 * enemy_pos_aux), 24 * map->getTileSize()));
+	enemies[2]->setOrientation(-cos(currentTime / 500.f) / 10);
 	enemies[2]->render();
 	enemies[3]->setPosition(glm::vec2((8 * map->getTileSize() + 400 * enemy_pos), 24 * map->getTileSize()));
 	enemies[3]->setOrientation(cos(currentTime / 500.f) / 10);

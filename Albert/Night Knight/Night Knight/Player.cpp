@@ -100,7 +100,12 @@ void Player::update(int deltaTime)
 	else
 	{
 		posPlayer.y += FALL_STEP;
-		if(map->collisionMoveDown(posPlayer, glm::ivec2(32, 32), &posPlayer.y))
+
+		if (map->collisionSpikesDown(posPlayer, glm::ivec2(32, 32), &posPlayer.y)) {
+			mort = true;
+		}
+
+		else if(map->collisionMoveDown(posPlayer, glm::ivec2(32, 32), &posPlayer.y))
 		{
 			if(Game::instance().getSpecialKey(GLUT_KEY_UP))
 			{
@@ -108,7 +113,9 @@ void Player::update(int deltaTime)
 				jumpAngle = 0;
 				startY = posPlayer.y;
 			}
+
 		}
+
 	}
 	
 	sprite->setPosition(glm::vec2(float(tileMapDispl.x + posPlayer.x), float(tileMapDispl.y + posPlayer.y)));
