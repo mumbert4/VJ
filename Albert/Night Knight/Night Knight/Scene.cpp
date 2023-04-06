@@ -4,6 +4,7 @@
 #include "Scene.h"
 #include "Game.h"
 
+
 #define _USE_MATH_DEFINES
 #include <math.h>
 
@@ -108,17 +109,18 @@ bool Scene::comprovar_mort(Player* jugador, Enemy* enemics) {
 	if (player->getMorint()) return true;
 
 	else {
-		glm::vec2 pos = player->getPosition();
+		glm::vec2 pos1 = player->getPosition();
 
 		for (int i = 0; i < 10; i++) {
 			if (enemies[i] != NULL) {
-				glm::vec2 posE = enemies[i]->getPosition();
-
-				if (pos.x == posE.x && pos.y == posE.y) return true;
-
+				glm::vec2 pos2 = enemies[i]->getPosition();
+				if (pos1.x < (pos2.x+16) && pos2.x < (pos1.x+16)) {
+					if (pos1.y < (pos2.y+16) && pos2.y < (pos1.y+16)){
+						return true;
+					}
+				}
 			}
 		}
-
 	}
 	return false;
 }
