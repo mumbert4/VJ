@@ -33,6 +33,12 @@ public:
 	bool collisionMoveLeft(const glm::ivec2 &pos, const glm::ivec2 &size) const;
 	bool collisionMoveRight(const glm::ivec2 &pos, const glm::ivec2 &size) const;
 	bool collisionMoveDown(const glm::ivec2 &pos, const glm::ivec2 &size, int *posY) const;
+
+	bool collisionSpikesDown(const glm::ivec2& pos, const glm::ivec2& size, int* posY) const;
+	bool collisionRajola(const glm::ivec2& pos, const glm::ivec2& size, int* posY);
+
+	int getRajola();
+
 	
 private:
 	bool loadLevel(const string &levelFile);
@@ -48,6 +54,8 @@ private:
 	Texture tilesheet;
 	glm::vec2 tileTexSize;
 	int *map;
+	int num_rajoles;
+	ShaderProgram texProgram;
 
 };
 

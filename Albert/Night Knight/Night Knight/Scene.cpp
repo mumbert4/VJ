@@ -93,10 +93,14 @@ void Scene::comprovar_victoria_derrota() {
 
 	}
 	else if (victoria) {
+
 		/////////////// CONDICIO VICTORIA
 		/*
 		puntuacio += temps_actual * 10;
 		Saltar al seeguent o menu
+
+		map->getRajola() == 0
+		
 		
 		*/
 
@@ -185,7 +189,7 @@ void Scene::render()
 	text.render("Vides: " + to_string(int(player->getVides())), glm::vec2(CAMERA_WIDTH - 150, 50), 30, glm::vec4(1, 1, 1, 1));
 	text.render("Puntuacio: " + to_string(puntuacio), glm::vec2(50, 50), 30, glm::vec4(1, 1, 1, 1));
 
-	//text.render("Enemic", glm::vec2(enemy_pos + 235.f, 280.f), 20, glm::vec4(1, 1, 1, 1));
+	text.render("Rajoles restants:" + to_string(map->getRajola()), glm::vec2(CAMERA_WIDTH - 400, 65), 20, glm::vec4(1, 1, 1, 1));
 }
 
 void Scene::initShaders()

@@ -105,7 +105,9 @@ void Player::update(int deltaTime)
 			mort = true;
 		}
 
-		else if(map->collisionMoveDown(posPlayer, glm::ivec2(32, 32), &posPlayer.y))
+		map->collisionRajola(posPlayer, glm::ivec2(32, 32), &posPlayer.y);
+
+		if(map->collisionMoveDown(posPlayer, glm::ivec2(32, 32), &posPlayer.y))
 		{
 			if(Game::instance().getSpecialKey(GLUT_KEY_UP))
 			{
@@ -113,6 +115,7 @@ void Player::update(int deltaTime)
 				jumpAngle = 0;
 				startY = posPlayer.y;
 			}
+
 
 		}
 

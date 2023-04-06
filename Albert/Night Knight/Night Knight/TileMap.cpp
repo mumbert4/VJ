@@ -18,6 +18,8 @@ TileMap *TileMap::createTileMap(const string &levelFile, const glm::vec2 &minCoo
 
 TileMap::TileMap(const string &levelFile, const glm::vec2 &minCoords, ShaderProgram &program)
 {
+	num_rajoles = 0;
+	texProgram = program;
 	loadLevel(levelFile);
 	prepareArrays(minCoords, program);
 }
@@ -85,8 +87,10 @@ bool TileMap::loadLevel(const string &levelFile)
 			fin.get(tile);
 			if(tile == ' ')
 				map[j*mapSize.x+i] = 0;
-			else
-				map[j*mapSize.x+i] = tile - int('0');
+			else {
+				map[j * mapSize.x + i] = tile - int('0');
+				if (tile == '2') num_rajoles++;
+			}
 		}
 		fin.get(tile);
 #ifndef _WIN32
@@ -219,6 +223,34 @@ bool TileMap::collisionSpikesDown(const glm::ivec2& pos, const glm::ivec2& size,
 
 	return false;
 }
+
+bool TileMap::collisionRajola(const glm::ivec2& pos, const glm::ivec2& size, int* posY)
+{
+	int x0, x1, y;
+
+	x0 = pos.x / tileSize;
+	x1 = (pos.x + size.x - 1) / tileSize;
+	y = (pos.y + size.y - 1) / tileSize;
+	for (int x = x0; x <= x1; x++)
+	{
+		if (map[y * mapSize.x + x] == 2) {
+			map[y * mapSize.x + x] = 3;
+			num_rajoles--;
+
+			prepareArrays(glm::vec2(32, 16), texProgram);
+
+			return true;
+		}
+	}
+
+	return false;
+}
+
+int TileMap::getRajola() {
+	return num_rajoles;
+
+}
+
 
 
 
